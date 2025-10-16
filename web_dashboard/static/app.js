@@ -507,6 +507,10 @@ async function carregarDadosPeriodo() {
             await buscarDados(mes, ano);
         }
 
+        // Atualizar título com metal selecionado
+        const nomeMetalFormatado = selectedMetal.charAt(0).toUpperCase() + selectedMetal.slice(1);
+        document.getElementById('tituloPeriodo').textContent = `Dados do Período - ${nomeMetalFormatado.toUpperCase()}`;
+
         // Criar mapas para acesso rápido
         const mapaSemanais = {};
         dadosCache.semanais.forEach(s => {
